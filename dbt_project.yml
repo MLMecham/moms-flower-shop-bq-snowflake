@@ -1,18 +1,18 @@
-name: 'moms_flower_shop_uni'
-version: '1.0.0'
+name: "moms_flower_shop_uni"
+version: "1.0.0"
 config-version: 2
 
-profile: 'moms_flower_shop'  # see profiles.yml for more information
+profile: "moms_flower_shop" # see profiles.yml for more information
 
-# This config is for connecting this local project to dbt Platform. 
-# You can find the project-id in the URL when you are on the project page on platform. 
+# This config is for connecting this local project to dbt Platform.
+# You can find the project-id in the URL when you are on the project page on platform.
 # For example, if your URL is https://...dbt.com/dashboard/<account-number>/projects/515527/, then your project-id is 515527.
-# Uncomment the lines below and add your project-id to connect to dbt Platform. 
+# Uncomment the lines below and add your project-id to connect to dbt Platform.
 # This will allow you to run dbt commands from the UI, and also use features like the IDE and job scheduler.
 
 # dbt-cloud:
 #     project-id: 515527
-    
+
 # These configurations specify where dbt should look for different types of files.
 # The `model-paths` config, for example, states that models in this project can be
 # found in the "models/" directory. You probably won't need to change these!
@@ -23,8 +23,8 @@ seed-paths: ["seeds"]
 macro-paths: ["macros"]
 snapshot-paths: ["snapshots"]
 
-target-path: "target"  # directory which will store compiled SQL files
-clean-targets:         # directories to be removed by `dbt clean`
+target-path: "target" # directory which will store compiled SQL files
+clean-targets: # directories to be removed by `dbt clean`
   - "target"
   - "dbt_packages"
 
@@ -37,3 +37,8 @@ models:
       +materialized: view
     marts:
       +materialized: table
+
+seeds:
+  moms_flower_shop:
+    kids_feet:
+      +alias: kids_feet
